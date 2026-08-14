@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MATHILDE // Cybersecurity & Systems Portfolio</title>
+  <title>Cybersecurity & Systems Portfolio</title>
   <style>
     :root {
       --bg: #050811;
@@ -31,7 +31,7 @@
       position: relative;
     }
 
-    /* Cyber scanline visual overlay */
+    /* Cyber scanline visual overlay - fixed with pointer-events: none */
     body::before {
       content: " ";
       display: block;
@@ -40,7 +40,7 @@
       background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
       background-size: 100% 4px;
       z-index: 999;
-      pointer-events: none;
+      pointer-events: none; /* Prevents overlay from blocking mouse clicks */
       opacity: 0.5;
     }
 
@@ -252,6 +252,7 @@
       border: 1px solid var(--border);
       padding: 1.5rem;
       border-radius: 4px;
+      cursor: text; /* Indication that the box is clickable */
     }
 
     .console-input-wrap {
@@ -273,6 +274,7 @@
       font-size: 1rem;
       width: 100%;
       outline: none;
+      caret-color: var(--neon-green); /* Glowing cursor */
     }
 
     footer {
@@ -294,7 +296,7 @@
   <div class="glow"></div>
 
   <nav>
-    <div class="logo"><span class="status-indicator"></span>MATHILDE // SEC_OPS</div>
+    <!-- <div class="logo"><span class="status-indicator"></span>MATHILDE // SEC_OPS</div> -->
     <ul class="nav-links">
       <li><a href="#about">/about</a></li>
       <li><a href="#capabilities">/skills</a></li>
@@ -306,8 +308,8 @@
 
   <!-- Hero Section -->
   <section id="about">
-    <div class="badge">LOCATION: YORK, UK // AVAILABLE FOR PART-TIME SEC ROLES</div>
-    <h1>OPERATOR: <span>MATHILDE</span></h1>
+    <div class="badge">LOCATION: YORK, UK // LOOKING FOR A GRADUATE-ENTRY CYBERSECURITY ROLE & A SUMMER 2027 INTERNSHIP</div>
+    <h1><span>mathilde couturier-dale</span></h1>
     
     <div class="terminal-box">
       <div class="command-line">&gt; mathilde --academic-status</div>
@@ -391,7 +393,7 @@
         <ul>
           <li>Developed and deployed a website utilizing HTML, CSS, and JavaScript.</li>
           <li>Engineered initial builds for an automated upload-handling system for Fujitsu using Python, SQL, and API integration.</li>
-          <li>Utilized Marketo for secure content hosting and marketing automation.</li>
+          <li>Utilised Marketo for secure content hosting and marketing automation.</li>
         </ul>
         <div class="tags">
           <span class="tag">Python</span>
@@ -417,9 +419,9 @@
     </div>
   </section>
 
-  <!-- Governance & Leadership Section -->
+  <!-- Leadership & Activities Section -->
   <section id="leadership">
-    <h2>[ GOVERNANCE & LEADERSHIP ]</h2>
+    <h2>[ LEADERSHIP & ACTIVITIES ]</h2>
     <div class="grid" style="margin-top: 1.5rem;">
       <div class="cyber-card">
         <h3>Data Protection Officer</h3>
@@ -457,21 +459,21 @@
   <!-- Interactive Terminal CLI Section -->
   <section id="terminal">
     <h2>[ INTERACTIVE_TERMINAL ]</h2>
-    <p style="color: var(--text-muted); margin-bottom: 1rem;">Type <span style="color: var(--neon-cyan);">help</span>, <span style="color: var(--neon-cyan);">education</span>, <span style="color: var(--neon-cyan);">certs</span>, or <span style="color: var(--neon-cyan);">contact</span> below:</p>
+    <p style="color: var(--text-muted); margin-bottom: 1rem;">Click inside the box and type <span style="color: var(--neon-cyan);">help</span>, <span style="color: var(--neon-cyan);">education</span>, <span style="color: var(--neon-cyan);">certs</span>, or <span style="color: var(--neon-cyan);">contact</span> below:</p>
 
-    <div class="interactive-console">
+    <div class="interactive-console" id="terminal-container">
       <div id="console-output">
         <p style="color: var(--text-muted);">Mathilde Operational Terminal v2.0 initialized. Ready for query.</p>
       </div>
       <div class="console-input-wrap">
         <span>mathilde@york-sec:~$</span>
-        <input type="text" id="cli-input" class="console-input" autofocus />
+        <input type="text" id="cli-input" class="console-input" autocomplete="off" spellcheck="false" />
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© MATHILDE PROTOCOL // BSc Computer Science @ University of York // Hosted on GitHub Pages</p>
+    <p>© Mathilde Couturier-Dale // BSc Computer Science @ University of York // Hosted on GitHub Pages</p>
   </footer>
 
   <script>
@@ -499,6 +501,12 @@
     // Interactive Terminal CLI System
     const input = document.getElementById('cli-input');
     const output = document.getElementById('console-output');
+    const terminalBox = document.getElementById('terminal-container');
+
+    // Auto-focus input when clicking anywhere inside the terminal box
+    terminalBox.addEventListener('click', () => {
+      input.focus();
+    });
 
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
