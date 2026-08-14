@@ -469,15 +469,13 @@
   <!-- Projects Section -->
   <section id="projects">
     <h2>[ featured projects ]</h2>
-    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Public codebases, academic modules, and technical experiments hosted on my GitHub repository.</p>
-    
     <div class="grid">
       <!-- Project 1 -->
       <div class="cyber-card">
         <div>
           <h3>Software Engineering Game Project</h3>
           <h4>Repo: <span style="color: var(--neon-cyan);">sof_eng_module</span></h4>
-          <p>ENG1 Java 2D game project built as part of the Software Engineering module at the University of York.</p>
+          <p>Worked in a team of 7 to create a 2D Java maze 'escape uni' game as part of a Software Engineering module at the University of York.</p>
           <p style="color: var(--neon-green); font-weight: bold; margin-top: 0.5rem;">Achieved Final Mark: 85% (First)</p>
         </div>
         <div>
@@ -557,7 +555,7 @@
           <h3>Software & Web Development Intern</h3>
           <h4>CleverTouch // Jul 2022 – Aug 2022</h4>
           <ul>
-            <li>Developed and deployed a website utilizing HTML, CSS, and JavaScript.</li>
+            <li>Developed and deployed a website utilising HTML, CSS, and JavaScript.</li>
             <li>Engineered initial builds for an automated upload-handling system for Fujitsu using Python, SQL, and API integration.</li>
             <li>Utilised Marketo for secure content hosting and marketing automation.</li>
           </ul>
@@ -742,12 +740,11 @@
 
         if (command === 'help') {
           p.innerHTML = `<span style="color:var(--neon-green);">Available commands:</span><br>
-          - <b>projects</b>: View open-source work & GitHub repos<br>
-          - <b>education</b>: Academic records at Uni of York & Peter Symonds<br>
-          - <b>certs</b>: Professional certifications (CISCO / IBM)<br>
+          - <b>projects</b>: View GitHub repos<br>
+          - <b>education</b>: Academic records<br>
+          - <b>certs</b>: Professional certifications<br>
           - <b>skills</b>: Tech stack & tools<br>
-          - <b>gdpr</b>: Details on Data Protection Officer role<br>
-          - <b>contact</b>: LinkedIn, GitHub & outreach links<br>
+          - <b>contact</b>: LinkedIn, GitHub<br>
           - <b>clear</b>: Wipe terminal log`;
         } else if (command === 'projects') {
           p.innerHTML = "Public GitHub Repositories:<br>" +
@@ -762,13 +759,11 @@
           p.innerHTML = "- CISCO: Ethical Hacker Certification<br>- IBM: Beginner's Guide to Cybersecurity";
         } else if (command === 'skills') {
           p.innerHTML = "Languages: Python, C, C#, Java, C++, R, JS, SQL.<br>Tools: Wireshark, GitHub, Jupyter, OpenCV, MediaPipe, Marketo.";
-        } else if (command === 'gdpr') {
-          p.innerHTML = "DPO @ Biomed Society: Responsible for auditing storage drives, GDPR compliance, and maintaining user privacy.";
         } else if (command === 'contact') {
           p.innerHTML = "Connect & Outreach:<br>" +
             "- LinkedIn: <a href='https://www.linkedin.com/in/mathilde-c-b41465356/' target='_blank' style='color:var(--neon-cyan);'>linkedin.com/in/mathilde-c-b41465356</a><br>" +
             "- GitHub: <a href='https://github.com/mathildecd20' target='_blank' style='color:var(--neon-cyan);'>github.com/mathildecd20</a><br>" +
-            "- Location: York, UK (Seeking Graduate Roles & Summer 2027 Internships)";
+            "- email: mathilde.cd@icloud.com";
         } else if (command === 'clear') {
           output.innerHTML = '';
           input.value = '';
