@@ -240,31 +240,6 @@
       text-decoration: underline;
     }
 
-    /* Filter System */
-    .filter-bar {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 0.4rem 1rem;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--neon-cyan);
-      color: var(--bg);
-      font-weight: bold;
-      border-color: var(--neon-cyan);
-    }
-
     /* Social Links Buttons */
     .social-btn-group {
       display: flex;
@@ -532,14 +507,8 @@
   <section id="experience">
     <h2>[ RELEVANT_EXPERIENCE ]</h2>
     
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">ALL_RECORDS</button>
-      <button class="filter-btn" data-filter="dev">DEV_OPS</button>
-      <button class="filter-btn" data-filter="advisory">ADVISORY</button>
-    </div>
-
-    <div class="grid" id="experience-grid">
-      <div class="cyber-card" data-category="dev">
+    <div class="grid" style="margin-top: 1.5rem;">
+      <div class="cyber-card">
         <div>
           <h3>Software & Web Development Intern</h3>
           <h4>CleverTouch // Jul 2022 – Aug 2022</h4>
@@ -557,7 +526,7 @@
         </div>
       </div>
 
-      <div class="cyber-card" data-category="advisory">
+      <div class="cyber-card">
         <div>
           <h3>Advisory Board Member (Volunteer)</h3>
           <h4>Digital Nomad Project // Jun 2021 – Jun 2022</h4>
@@ -643,27 +612,6 @@
   </footer>
 
   <script>
-    // Experience Category Filtering
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const expCards = document.querySelectorAll('#experience-grid .cyber-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-
-        expCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
     // Interactive Terminal CLI System
     const input = document.getElementById('cli-input');
     const output = document.getElementById('console-output');
