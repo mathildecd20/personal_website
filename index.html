@@ -450,55 +450,79 @@
   <!-- Projects Section -->
   <section id="projects">
     <h2>[ FEATURED_PROJECTS ]</h2>
-    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Explore codebases, cybersecurity tools, and technical experiments hosted on my GitHub repository.</p>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Public codebases, academic modules, and technical experiments hosted on my GitHub repository.</p>
     
     <div class="grid">
+      <!-- Project 1 -->
       <div class="cyber-card">
         <div>
-          <h3>Fujitsu Automated Upload Handler</h3>
-          <h4>CleverTouch Internship Project</h4>
-          <p>Initial builds for an automated upload-handling pipeline leveraging Python, SQL, and custom API integrations for automated data processing.</p>
+          <h3>Software Engineering Game Project</h3>
+          <h4>Repo: <span style="color: var(--neon-cyan);">sof_eng_module</span></h4>
+          <p>ENG1 Java 2D game project built as part of the Software Engineering module at the University of York.</p>
+          <p style="color: var(--neon-green); font-weight: bold; margin-top: 0.5rem;">Achieved Final Mark: 85% (First)</p>
         </div>
         <div>
           <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Software Engineering</span>
+          </div>
+          <a href="https://github.com/mathildecd20/sof_eng_module" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="cyber-card">
+        <div>
+          <h3>Introduction to ML & Optimisation</h3>
+          <h4>Repo: <span style="color: var(--neon-cyan);">imlo_module</span></h4>
+          <p>Built a Convolutional Neural Network (CNN) to classify cat and dog images from the Oxford-IIIT Pet dataset. Achieved 61% test accuracy.</p>
+          <p style="color: var(--neon-green); font-weight: bold; margin-top: 0.5rem;">Final Grade: 75% (Pre-scaling)</p>
+        </div>
+        <div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Computer Vision</span>
+          </div>
+          <a href="https://github.com/mathildecd20/imlo_module" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="cyber-card">
+        <div>
+          <h3>Data Science & Analytics Work</h3>
+          <h4>Repo: <span style="color: var(--neon-cyan);">data_science_module</span></h4>
+          <p>Practical coursework and exploration from the DATA module @ University of York, using Jupyter Notebooks and IDLE to perform data manipulation and queries.</p>
+        </div>
+        <div>
+          <div class="tags">
+            <span class="tag">Jupyter Notebook</span>
             <span class="tag">Python</span>
             <span class="tag">SQL</span>
-            <span class="tag">REST APIs</span>
+            <span class="tag">Data Analysis</span>
           </div>
-          <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
+          <a href="https://github.com/mathildecd20/data_science_module" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
         </div>
       </div>
 
+      <!-- Project 4 -->
       <div class="cyber-card">
         <div>
-          <h3>picoCTF & Security Labs</h3>
-          <h4>University of York Cyber Society</h4>
-          <p>Collection of writeups, vulnerability exploitation scripts, and network analysis tools built during Capture The Flag (CTF) competitions.</p>
+          <h3>Hand Landmark Detection</h3>
+          <h4>Repo: <span style="color: var(--neon-cyan);">hand_landmark_detection</span></h4>
+          <p>Computer vision implementation utilizing OpenCV and MediaPipe to detect and track key hand features and landmarks in real-time video streams.</p>
         </div>
         <div>
           <div class="tags">
-            <span class="tag">Wireshark</span>
             <span class="tag">Python</span>
-            <span class="tag">CTF Solutions</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">Computer Vision</span>
           </div>
-          <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
-        </div>
-      </div>
-
-      <div class="cyber-card">
-        <div>
-          <h3>Systems & Machine Learning Labs</h3>
-          <h4>BSc Computer Science Academic Projects</h4>
-          <p>Implementations of low-level system concepts, algorithms, data analytics, and machine learning models built using C, Java, Python, Pandas, and Jupyter.</p>
-        </div>
-        <div>
-          <div class="tags">
-            <span class="tag">C</span>
-            <span class="tag">Java</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">Machine Learning</span>
-          </div>
-          <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
+          <a href="https://github.com/mathildecd20/hand_landmark_detection" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
         </div>
       </div>
     </div>
@@ -665,16 +689,18 @@
           - <b>contact</b>: LinkedIn, GitHub & outreach links<br>
           - <b>clear</b>: Wipe terminal log`;
         } else if (command === 'projects') {
-          p.innerHTML = "Repositories & Open-Source Projects:<br>" +
-            "- Fujitsu Automated Upload Handler (Python, SQL)<br>" +
-            "- picoCTF Security Exploitation Labs<br>" +
-            "- Visit GitHub: <a href='https://github.com/mathildecd20' target='_blank' style='color:var(--neon-cyan);'>github.com/mathildecd20</a>";
+          p.innerHTML = "Public GitHub Repositories:<br>" +
+            "- <b>sof_eng_module</b>: ENG1 Java 2D Game (Score: 85% - First)<br>" +
+            "- <b>imlo_module</b>: CNN Cat/Dog Classifier (Score: 75%)<br>" +
+            "- <b>data_science_module</b>: Python & SQL Data Worksheets<br>" +
+            "- <b>hand_landmark_detection</b>: Real-time OpenCV & MediaPipe tracking<br>" +
+            "- GitHub Link: <a href='https://github.com/mathildecd20' target='_blank' style='color:var(--neon-cyan);'>github.com/mathildecd20</a>";
         } else if (command === 'education') {
           p.innerHTML = "BSc Computer Science | University of York (2024-Present)<br>A Levels | Peter Symonds College (A*ABC - Computer Science, Maths, French, EPQ)";
         } else if (command === 'certs') {
           p.innerHTML = "- CISCO: Ethical Hacker Certification<br>- IBM: Beginner's Guide to Cybersecurity";
         } else if (command === 'skills') {
-          p.innerHTML = "Languages: Python, C, C#, Java, C++, R, JS, SQL.<br>Tools: Wireshark, GitHub, Jupyter, Marketo, Canva.";
+          p.innerHTML = "Languages: Python, C, C#, Java, C++, R, JS, SQL.<br>Tools: Wireshark, GitHub, Jupyter, OpenCV, MediaPipe, Marketo.";
         } else if (command === 'gdpr') {
           p.innerHTML = "DPO @ Biomed Society: Responsible for auditing storage drives, GDPR compliance, and maintaining user privacy.";
         } else if (command === 'contact') {
