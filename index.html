@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cybersecurity & Systems Portfolio</title>
+  <title>Cybersecurity & Systems Portfolio // Mathilde Couturier-Dale</title>
   <style>
     :root {
       --bg: #050811;
@@ -31,7 +31,7 @@
       position: relative;
     }
 
-    /* Cyber scanline visual overlay - fixed with pointer-events: none */
+    /* Cyber scanline visual overlay */
     body::before {
       content: " ";
       display: block;
@@ -40,7 +40,7 @@
       background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
       background-size: 100% 4px;
       z-index: 999;
-      pointer-events: none; /* Prevents overlay from blocking mouse clicks */
+      pointer-events: none;
       opacity: 0.5;
     }
 
@@ -76,6 +76,7 @@
       font-size: 1.1rem;
       color: var(--neon-cyan);
       letter-spacing: 2px;
+      text-decoration: none;
     }
 
     .status-indicator {
@@ -169,6 +170,9 @@
       padding: 1.5rem;
       position: relative;
       transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .cyber-card:hover {
@@ -221,6 +225,21 @@
       border-color: rgba(0, 255, 102, 0.3);
     }
 
+    .card-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .card-link:hover {
+      color: var(--neon-green);
+      text-decoration: underline;
+    }
+
     /* Filter System */
     .filter-bar {
       display: flex;
@@ -246,13 +265,41 @@
       border-color: var(--neon-cyan);
     }
 
+    /* Social Links Buttons */
+    .social-btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cyber-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--neon-cyan);
+      background: rgba(0, 243, 255, 0.05);
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+
+    .cyber-btn:hover {
+      background: var(--neon-cyan);
+      color: var(--bg);
+      box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+      font-weight: bold;
+    }
+
     /* Terminal Console Module */
     .interactive-console {
       background: #000;
       border: 1px solid var(--border);
       padding: 1.5rem;
       border-radius: 4px;
-      cursor: text; /* Indication that the box is clickable */
+      cursor: text;
     }
 
     .console-input-wrap {
@@ -274,7 +321,7 @@
       font-size: 1rem;
       width: 100%;
       outline: none;
-      caret-color: var(--neon-green); /* Glowing cursor */
+      caret-color: var(--neon-green);
     }
 
     footer {
@@ -283,6 +330,15 @@
       text-align: center;
       font-size: 0.8rem;
       color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -296,10 +352,11 @@
   <div class="glow"></div>
 
   <nav>
-    <!-- <div class="logo"><span class="status-indicator"></span>MATHILDE // SEC_OPS</div> -->
+    <a href="#about" class="logo"><span class="status-indicator"></span>M. COUTURIER-DALE</a>
     <ul class="nav-links">
       <li><a href="#about">/about</a></li>
       <li><a href="#capabilities">/skills</a></li>
+      <li><a href="#projects">/projects</a></li>
       <li><a href="#experience">/experience</a></li>
       <li><a href="#leadership">/governance</a></li>
       <li><a href="#terminal">/terminal</a></li>
@@ -321,6 +378,12 @@
       <div class="command-line">&gt; mathilde --languages</div>
       <div class="typing-text">English (Native) | French (Fluent)</div>
     </div>
+
+    <!-- Direct Links -->
+    <div class="social-btn-group">
+      <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="cyber-btn">[ GitHub Profile ]</a>
+      <a href="https://www.linkedin.com/in/mathilde-c-b41465356/" target="_blank" rel="noopener noreferrer" class="cyber-btn">[ LinkedIn Profile ]</a>
+    </div>
   </section>
 
   <!-- Technical Skills & Certs -->
@@ -328,9 +391,11 @@
     <h2>[ CAPABILITIES & CERTIFICATIONS ]</h2>
     <div class="grid" style="margin-top: 1.5rem;">
       <div class="cyber-card">
-        <h3>Programming & Core Systems</h3>
-        <p>Python, C, C#, Java, foundational C++ and R.</p>
-        <p>Core Operating Systems, Networking, and Machine Learning concepts.</p>
+        <div>
+          <h3>Programming & Core Systems</h3>
+          <p>Python, C, C#, Java, foundational C++ and R.</p>
+          <p>Core Operating Systems, Networking, and Machine Learning concepts.</p>
+        </div>
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">C</span>
@@ -340,9 +405,11 @@
       </div>
 
       <div class="cyber-card">
-        <h3>Cybersecurity Operations</h3>
-        <p>Passive and active reconnaissance, network protocol analysis, CTF exploitation.</p>
-        <p>Active participant in <b>picoCTF</b> via University of York Cyber Society.</p>
+        <div>
+          <h3>Cybersecurity Operations</h3>
+          <p>Passive and active reconnaissance, network protocol analysis, CTF exploitation.</p>
+          <p>Active participant in <b>picoCTF</b> via University of York Cyber Society.</p>
+        </div>
         <div class="tags">
           <span class="tag">Wireshark</span>
           <span class="tag">CTFs</span>
@@ -352,8 +419,10 @@
       </div>
 
       <div class="cyber-card">
-        <h3>Web & Data Analysis</h3>
-        <p>HTML, CSS, JavaScript, SQL, Jupyter Notebooks, NumPy, and Pandas.</p>
+        <div>
+          <h3>Web & Data Analysis</h3>
+          <p>HTML, CSS, JavaScript, SQL, Jupyter Notebooks, NumPy, and Pandas.</p>
+        </div>
         <div class="tags">
           <span class="tag">SQL</span>
           <span class="tag">JavaScript</span>
@@ -363,14 +432,73 @@
       </div>
 
       <div class="cyber-card" style="border-color: rgba(0, 255, 102, 0.3);">
-        <h3 style="color: var(--neon-green);">Industry Certifications</h3>
-        <ul>
-          <li><b>CISCO</b> – Ethical Hacker (IoT, Cloud, Wireless, Application Attacks, Pentest Reports)</li>
-          <li><b>IBM</b> – Beginner's Guide to Cybersecurity (CS0221EN)</li>
-        </ul>
+        <div>
+          <h3 style="color: var(--neon-green);">Industry Certifications</h3>
+          <ul>
+            <li><b>CISCO</b> – Ethical Hacker (IoT, Cloud, Wireless, Application Attacks, Pentest Reports)</li>
+            <li><b>IBM</b> – Beginner's Guide to Cybersecurity (CS0221EN)</li>
+          </ul>
+        </div>
         <div class="tags">
           <span class="tag cert-tag">CISCO Certified</span>
           <span class="tag cert-tag">IBM Certified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>[ FEATURED_PROJECTS ]</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Explore codebases, cybersecurity tools, and technical experiments hosted on my GitHub repository.</p>
+    
+    <div class="grid">
+      <div class="cyber-card">
+        <div>
+          <h3>Fujitsu Automated Upload Handler</h3>
+          <h4>CleverTouch Internship Project</h4>
+          <p>Initial builds for an automated upload-handling pipeline leveraging Python, SQL, and custom API integrations for automated data processing.</p>
+        </div>
+        <div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">REST APIs</span>
+          </div>
+          <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
+        </div>
+      </div>
+
+      <div class="cyber-card">
+        <div>
+          <h3>picoCTF & Security Labs</h3>
+          <h4>University of York Cyber Society</h4>
+          <p>Collection of writeups, vulnerability exploitation scripts, and network analysis tools built during Capture The Flag (CTF) competitions.</p>
+        </div>
+        <div>
+          <div class="tags">
+            <span class="tag">Wireshark</span>
+            <span class="tag">Python</span>
+            <span class="tag">CTF Solutions</span>
+          </div>
+          <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
+        </div>
+      </div>
+
+      <div class="cyber-card">
+        <div>
+          <h3>Systems & Machine Learning Labs</h3>
+          <h4>BSc Computer Science Academic Projects</h4>
+          <p>Implementations of low-level system concepts, algorithms, data analytics, and machine learning models built using C, Java, Python, Pandas, and Jupyter.</p>
+        </div>
+        <div>
+          <div class="tags">
+            <span class="tag">C</span>
+            <span class="tag">Java</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+          <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer" class="card-link">&gt; View Repository On GitHub</a>
         </div>
       </div>
     </div>
@@ -388,13 +516,15 @@
 
     <div class="grid" id="experience-grid">
       <div class="cyber-card" data-category="dev">
-        <h3>Software & Web Development Intern</h3>
-        <h4>CleverTouch // Jul 2022 – Aug 2022</h4>
-        <ul>
-          <li>Developed and deployed a website utilizing HTML, CSS, and JavaScript.</li>
-          <li>Engineered initial builds for an automated upload-handling system for Fujitsu using Python, SQL, and API integration.</li>
-          <li>Utilised Marketo for secure content hosting and marketing automation.</li>
-        </ul>
+        <div>
+          <h3>Software & Web Development Intern</h3>
+          <h4>CleverTouch // Jul 2022 – Aug 2022</h4>
+          <ul>
+            <li>Developed and deployed a website utilizing HTML, CSS, and JavaScript.</li>
+            <li>Engineered initial builds for an automated upload-handling system for Fujitsu using Python, SQL, and API integration.</li>
+            <li>Utilised Marketo for secure content hosting and marketing automation.</li>
+          </ul>
+        </div>
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">SQL</span>
@@ -404,12 +534,14 @@
       </div>
 
       <div class="cyber-card" data-category="advisory">
-        <h3>Advisory Board Member (Volunteer)</h3>
-        <h4>Digital Nomad Project // Jun 2021 – Jun 2022</h4>
-        <ul>
-          <li>Performed technical testing and usability reviews on digital learning platforms.</li>
-          <li>Identified platform bugs, logic errors, and UI friction to boost platform reliability and user security.</li>
-        </ul>
+        <div>
+          <h3>Advisory Board Member (Volunteer)</h3>
+          <h4>Digital Nomad Project // Jun 2021 – Jun 2022</h4>
+          <ul>
+            <li>Performed technical testing and usability reviews on digital learning platforms.</li>
+            <li>Identified platform bugs, logic errors, and UI friction to boost platform reliability and user security.</li>
+          </ul>
+        </div>
         <div class="tags">
           <span class="tag">QA Testing</span>
           <span class="tag">Usability Audit</span>
@@ -424,9 +556,11 @@
     <h2>[ LEADERSHIP & ACTIVITIES ]</h2>
     <div class="grid" style="margin-top: 1.5rem;">
       <div class="cyber-card">
-        <h3>Data Protection Officer</h3>
-        <h4>Biomed Society, University of York // 2025 – Present</h4>
-        <p>Ensure society-wide compliance with GDPR regulations. Actively monitor shared repositories, Google Drive access permissions, and student union channels to safeguard sensitive data.</p>
+        <div>
+          <h3>Data Protection Officer</h3>
+          <h4>Biomed Society, University of York // 2025 – Present</h4>
+          <p>Ensure society-wide compliance with GDPR regulations. Actively monitor shared repositories, Google Drive access permissions, and student union channels to safeguard sensitive data.</p>
+        </div>
         <div class="tags">
           <span class="tag">GDPR</span>
           <span class="tag">Data Privacy</span>
@@ -435,9 +569,11 @@
       </div>
 
       <div class="cyber-card">
-        <h3>Society President</h3>
-        <h4>Mental Health Awareness Society, Uni of York // Sep 2024 – Jan 2026</h4>
-        <p>Led society operations, managed campaigns, and completed leadership and safety training modules via York Students' Union. (Former Social Media Officer).</p>
+        <div>
+          <h3>Society President</h3>
+          <h4>Mental Health Awareness Society, Uni of York // Sep 2024 – Jan 2026</h4>
+          <p>Led society operations, managed campaigns, and completed leadership and safety training modules via York Students' Union. (Former Social Media Officer).</p>
+        </div>
         <div class="tags">
           <span class="tag">Leadership</span>
           <span class="tag">Operations</span>
@@ -445,9 +581,11 @@
       </div>
 
       <div class="cyber-card">
-        <h3>Active Member</h3>
-        <h4>Cyber Society, University of York // 2024 – Present</h4>
-        <p>Engage in hands-on CTF challenges (picoCTF), vulnerability analysis workshops, and ethical hacking exercises.</p>
+        <div>
+          <h3>Active Member</h3>
+          <h4>Cyber Society, University of York // 2024 – Present</h4>
+          <p>Engage in hands-on CTF challenges (picoCTF), vulnerability analysis workshops, and ethical hacking exercises.</p>
+        </div>
         <div class="tags">
           <span class="tag">picoCTF</span>
           <span class="tag">Ethical Hacking</span>
@@ -459,7 +597,7 @@
   <!-- Interactive Terminal CLI Section -->
   <section id="terminal">
     <h2>[ INTERACTIVE_TERMINAL ]</h2>
-    <p style="color: var(--text-muted); margin-bottom: 1rem;">Click inside the box and type <span style="color: var(--neon-cyan);">help</span>, <span style="color: var(--neon-cyan);">education</span>, <span style="color: var(--neon-cyan);">certs</span>, or <span style="color: var(--neon-cyan);">contact</span> below:</p>
+    <p style="color: var(--text-muted); margin-bottom: 1rem;">Click inside the box and type <span style="color: var(--neon-cyan);">help</span>, <span style="color: var(--neon-cyan);">projects</span>, <span style="color: var(--neon-cyan);">certs</span>, or <span style="color: var(--neon-cyan);">contact</span> below:</p>
 
     <div class="interactive-console" id="terminal-container">
       <div id="console-output">
@@ -473,7 +611,11 @@
   </section>
 
   <footer>
-    <p>© Mathilde Couturier-Dale // BSc Computer Science @ University of York // Hosted on GitHub Pages</p>
+    <p>© Mathilde Couturier-Dale // BSc Computer Science @ University of York</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://github.com/mathildecd20" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/mathilde-c-b41465356/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
   </footer>
 
   <script>
@@ -490,7 +632,7 @@
 
         expCards.forEach(card => {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'block';
+            card.style.display = 'flex';
           } else {
             card.style.display = 'none';
           }
@@ -503,7 +645,6 @@
     const output = document.getElementById('console-output');
     const terminalBox = document.getElementById('terminal-container');
 
-    // Auto-focus input when clicking anywhere inside the terminal box
     terminalBox.addEventListener('click', () => {
       input.focus();
     });
@@ -516,12 +657,18 @@
 
         if (command === 'help') {
           p.innerHTML = `<span style="color:var(--neon-green);">Available commands:</span><br>
+          - <b>projects</b>: View open-source work & GitHub repos<br>
           - <b>education</b>: Academic records at Uni of York & Peter Symonds<br>
           - <b>certs</b>: Professional certifications (CISCO / IBM)<br>
           - <b>skills</b>: Tech stack & tools<br>
           - <b>gdpr</b>: Details on Data Protection Officer role<br>
-          - <b>contact</b>: Outreach details<br>
+          - <b>contact</b>: LinkedIn, GitHub & outreach links<br>
           - <b>clear</b>: Wipe terminal log`;
+        } else if (command === 'projects') {
+          p.innerHTML = "Repositories & Open-Source Projects:<br>" +
+            "- Fujitsu Automated Upload Handler (Python, SQL)<br>" +
+            "- picoCTF Security Exploitation Labs<br>" +
+            "- Visit GitHub: <a href='https://github.com/mathildecd20' target='_blank' style='color:var(--neon-cyan);'>github.com/mathildecd20</a>";
         } else if (command === 'education') {
           p.innerHTML = "BSc Computer Science | University of York (2024-Present)<br>A Levels | Peter Symonds College (A*ABC - Computer Science, Maths, French, EPQ)";
         } else if (command === 'certs') {
@@ -531,7 +678,10 @@
         } else if (command === 'gdpr') {
           p.innerHTML = "DPO @ Biomed Society: Responsible for auditing storage drives, GDPR compliance, and maintaining user privacy.";
         } else if (command === 'contact') {
-          p.innerHTML = "Seeking a part-time paid security or developer position in York. Connect via GitHub Pages!";
+          p.innerHTML = "Connect & Outreach:<br>" +
+            "- LinkedIn: <a href='https://www.linkedin.com/in/mathilde-c-b41465356/' target='_blank' style='color:var(--neon-cyan);'>linkedin.com/in/mathilde-c-b41465356</a><br>" +
+            "- GitHub: <a href='https://github.com/mathildecd20' target='_blank' style='color:var(--neon-cyan);'>github.com/mathildecd20</a><br>" +
+            "- Location: York, UK (Seeking Graduate Roles & Summer 2027 Internships)";
         } else if (command === 'clear') {
           output.innerHTML = '';
           input.value = '';
